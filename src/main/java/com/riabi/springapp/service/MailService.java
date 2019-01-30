@@ -38,7 +38,7 @@ public class MailService {
         try {
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage, "UTF-8");
             message.setTo(to);
-            message.setFrom("noreply@springapp.com");
+            message.setFrom("noreplyspringapp@gmail.com");
             message.setSubject(subject);
             message.setText(content,isHtml);
             javaMailSender.send(mimeMessage);
@@ -49,7 +49,7 @@ public class MailService {
 
     @Async
     public void sendEmailFromTemplate(User user, String templateName, String subject) {
-        Locale locale = Locale.ENGLISH;
+        Locale locale = Locale.FRENCH;
         Context context = new Context(locale);
         context.setVariable("user", user);
         context.setVariable("baseURL",BASE_URL);
